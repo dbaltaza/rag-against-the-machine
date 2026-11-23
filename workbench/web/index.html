@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAG Workbench</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-head">
+      <div class="app-name">RAG Workbench</div>
+      <div class="app-sub">vLLM 0.10.1 · Qwen3-0.6B</div>
+    </div>
+    <nav class="side-nav" aria-label="Sections">
+      <div class="side-group">Guide</div>
+      <a href="#/overview" data-route="overview"><i class="ico" style="--c: var(--c-corpus)" data-icon="flow"></i>How it works</a>
+      <a href="#/chunking" data-route="chunking"><i class="ico" style="--c: var(--c-chunk)" data-icon="chunk"></i>Chunking</a>
+      <a href="#/tokenizing" data-route="tokenizing"><i class="ico" style="--c: var(--c-token)" data-icon="token"></i>Tokenizing</a>
+      <a href="#/ranking" data-route="ranking"><i class="ico" style="--c: var(--c-rank)" data-icon="rank"></i>Ranking with BM25</a>
+      <a href="#/prompt" data-route="prompt"><i class="ico" style="--c: var(--c-prompt)" data-icon="prompt"></i>Building the prompt</a>
+      <a href="#/generating" data-route="generating"><i class="ico" style="--c: var(--c-gen)" data-icon="gen"></i>Generating the answer</a>
+      <a href="#/recall" data-route="recall"><i class="ico" style="--c: var(--c-eval)" data-icon="eval"></i>Measuring recall</a>
+      <div class="side-group">Lab</div>
+      <a href="#/workbench" data-route="workbench"><i class="ico" style="--c: var(--accent)" data-icon="search"></i>Workbench</a>
+      <a href="#/index" data-route="index"><i class="ico" style="--c: var(--c-corpus)" data-icon="index"></i>Index</a>
+    </nav>
+    <div class="side-foot" id="status"><span class="led" id="led"></span><span id="status-text">Connecting…</span></div>
+  </aside>
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<aside class="sheet" id="sheet" aria-label="Source file" hidden>
+  <header class="sheet-head">
+    <div class="sheet-title">
+      <div class="sheet-path" id="sheet-path"></div>
+      <div class="sheet-meta" id="sheet-meta"></div>
+    </div>
+    <button class="btn plain" id="sheet-copy" type="button">Copy source</button>
+    <button class="icon-btn" id="sheet-close" type="button" aria-label="Close">✕</button>
+  </header>
+  <pre class="sheet-body" id="sheet-body"></pre>
+</aside>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
