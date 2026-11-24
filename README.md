@@ -22,6 +22,16 @@ Retrieval quality is measured with recall@k against the reference datasets.
 On the public datasets the system reaches **0.88 recall@5 on docs** and
 **0.85 recall@5 on code** (thresholds: 0.80 and 0.50).
 
+### The project in 60 seconds
+
+[![A 60-second film of the pipeline: ask, chunk, rank, answer, measure](media/poster.jpg)](media/rag-against-the-machine.mp4)
+
+[Watch the film](media/rag-against-the-machine.mp4) (60 s, 1080p). It is
+made in code: `media/video/demo.html` draws every frame from a time value
+(open it in a browser to scrub it) and `media/video/render.mjs` renders it to
+MP4 with Playwright and ffmpeg. Every number in it is a real measurement from
+this repository.
+
 ## Instructions
 
 ### Requirements
