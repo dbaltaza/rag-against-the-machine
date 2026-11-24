@@ -356,7 +356,7 @@ details.qa .answer p { margin: 0; }
 .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font-size: 12.5px; }
 
 /* ---------- workbench: toolbar / three panes / status bar ---------- */
-.app.side-off { grid-template-columns: 0 minmax(0, 1fr); }
+.app.side-off { grid-template-columns: minmax(0, 1fr); }
 .app.side-off .sidebar { display: none; }
 .main.full { overflow: hidden; }
 .wb { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; background: var(--bg); }
