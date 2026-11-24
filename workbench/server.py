@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -172,6 +172,14 @@ def create_app(
             raise HTTPException(
                 status_code=404, detail=f"Workbench page missing: {error}"
             )
+
+    @app.get("/favicon.ico", include_in_schema=False)
+    def favicon() -> FileResponse:
+        """The tab icon, for browsers that ask for it at the root."""
+        icon = WEB_DIRECTORY / "favicon.ico"
+        if not icon.is_file():
+            raise HTTPException(status_code=404, detail="No favicon")
+        return FileResponse(icon, media_type="image/x-icon")
 
     @app.get("/health")
     def health() -> Dict[str, Any]:

@@ -130,3 +130,12 @@ def test_learn_bm25_breakdown_adds_up(pipeline: RagPipeline) -> None:
         assert abs(total - hit["score"]) < 1e-3
     files = client.get("/learn/files", params={"q": "widgets"}).json()
     assert files and files[0].endswith("widgets.py")
+
+
+def test_favicon(pipeline: RagPipeline) -> None:
+    client = TestClient(create_app(pipeline))
+    ico = client.get("/favicon.ico")
+    assert ico.status_code == 200
+    assert ico.headers["content-type"] == "image/x-icon"
+    assert client.get("/static/favicon.svg").status_code == 200
+    assert client.get("/static/apple-touch-icon.png").status_code == 200
